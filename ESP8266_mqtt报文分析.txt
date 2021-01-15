@@ -1,0 +1,153 @@
+.........................Send one mqtt packet.........................
+
+FixHeader{
+PacketTag = 16
+PacketType  = 1
+RemainLength  = 35
+}
+VariableHeaderConnect{
+protocol_name_len_= 4
+protocol_name_= MQTT
+protocol_level_= 4
+connect_flag_= 192
+keep_alive_= 120
+client_id_len_= 9
+client_id_= 572878586
+usr_name_len_= 6
+usr_name_= 298563
+password_len_= 4
+password_= 0101
+}
+
+MQTT:0x10 0x23 0x00 0x04 0x4D 0x51 0x54 0x54 0x04 0xC0 0x00 0x78 0x00 0x09 0x35 0x37 0x32 0x38 0x37 0x38 0x35 0x38 0x36 0x00 0x06 0x32 0x39 0x38 0x35 0x36 0x33 0x00 0x04 0x30 0x31 0x30 0x31 
+
+Send One Packet Succ:
+.........................recv connect ack packet.........................
+
+FixHeader{
+PacketTag = 32
+PacketType  = 2
+RemainLength  = 2
+}
+VariableHeaderConnAck{
+ack_flags_= 0
+ret_code_= 0
+}
+
+Mqtt ACK:0x20 0x02 0x00 0x00 
+
+.........................Send one mqtt packet.........................
+
+FixHeader{
+PacketTag = 130
+PacketType  = 8
+RemainLength  = 13
+}
+VariableHeaderSubscribe{
+packet_identifier_= 2
+}
+PayloadSubscribe{
+TopicFilters= 0x00 0x08 0x6D 0x65 0x73 0x73 0x61 0x67 0x65 0x31 0x00 
+}
+
+MQTT:0x82 0x0D 0x00 0x02 0x00 0x08 0x6D 0x65 0x73 0x73 0x61 0x67 0x65 0x31 0x00 
+
+Send One Packet Succ:
+.........................recv subscribe ack packet.........................
+
+FixHeader{
+PacketTag = 144
+PacketType  = 9
+RemainLength  = 3
+}
+VariableHeaderSubscribeAck{
+packet_identifier_= 2
+}
+PayloadSubscribeAck{
+Results= 0x00 
+}
+
+ Publish SubTopicAck:0x90 0x03 0x00 0x02 0x00 
+
+.........................Send one mqtt packet.........................
+
+FixHeader{
+PacketTag = 162
+PacketType  = 10
+RemainLength  = 12
+}
+VariableHeaderUnSubscribe{
+packet_identifier_= 1
+}
+PayloadUnSubscribe{
+UnSubTopicFilter= 0x00 0x08 0x6D 0x65 0x73 0x73 0x61 0x67 0x65 0x31 
+}
+
+MQTT:0xA2 0x0C 0x00 0x01 0x00 0x08 0x6D 0x65 0x73 0x73 0x61 0x67 0x65 0x31 
+
+Send One Packet Succ:
+.........................recv unsubscribe ack packet.........................
+
+FixHeader{
+PacketTag = 176
+PacketType  = 11
+RemainLength  = 2
+}
+VariableHeaderUnSubscribeAck{
+packet_identifier_= 1
+}
+PayloadUnSubscribeAck{
+Results= 
+}
+
+ Publish UnSubTopicAck:0xB0 0x02 0x00 0x01 
+
+.........................Send one mqtt packet.........................
+
+FixHeader{
+PacketTag = 224
+PacketType  = 14
+RemainLength  = 0
+}
+
+MQTT:0xE0 0x00 
+
+Send One Packet Succ:
+.........................Send one mqtt packet.........................
+
+FixHeader{
+PacketTag = 16
+PacketType  = 1
+RemainLength  = 35
+}
+VariableHeaderConnect{
+protocol_name_len_= 4
+protocol_name_= MQTT
+protocol_level_= 4
+connect_flag_= 192
+keep_alive_= 120
+client_id_len_= 9
+client_id_= 572878586
+usr_name_len_= 6
+usr_name_= 298563
+password_len_= 4
+password_= 0101
+}
+
+MQTT:0x10 0x23 0x00 0x04 0x4D 0x51 0x54 0x54 0x04 0xC0 0x00 0x78 0x00 0x09 0x35 0x37 0x32 0x38 0x37 0x38 0x35 0x38 0x36 0x00 0x06 0x32 0x39 0x38 0x35 0x36 0x33 0x00 0x04 0x30 0x31 0x30 0x31 
+
+Send One Packet Succ:
+.........................recv connect ack packet.........................
+
+FixHeader{
+PacketTag = 32
+PacketType  = 2
+RemainLength  = 2
+}
+VariableHeaderConnAck{
+ack_flags_= 0
+ret_code_= 0
+}
+
+Mqtt ACK:0x20 0x02 0x00 0x00 
+
